@@ -1,0 +1,38 @@
+* ac-c-headers
+
+auto-complete source for C headers
+
+Ｃのヘッダをauto-completeで補完
+
+** Screencast
+
+[[screencast.gif]]
+
+** Usage
+
+Require this script (and auto-complete) then add to ac-sources.
+
+: (require 'ac-c-headers)
+: (add-hook 'c-mode-hook
+:           (lambda ()
+:             (add-to-list 'ac-sources 'ac-source-c-headers)
+:             (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+
+Header filenames and symbols in imported headers are completed.
+
+: #include <s[tdio.h>]   <- ac-source-c-headers
+: pr[intf]               <- ac-source-c-header-symbols
+
+** Customization
+
+ac-c-headers refers the variable =cc-search-directories= (defined in
+built-in elisp "find-file.el") for a list of directories that may
+contain header file(s).
+
+Therefore, if you are using MinGW in Windows, following configuration
+may be useful, for example.
+
+: (when (string= (window-system) "w32")
+:   (add-to-list 'cc-search-directories "C:/MinGW/include/"))
+
+
