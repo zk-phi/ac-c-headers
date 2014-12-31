@@ -1,6 +1,6 @@
 ;;; ac-c-headers.el --- auto-complete source for C headers
 
-;; Copyright (C) 2013 zk_phi
+;; Copyright (C) 2013-2015 zk_phi
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 ;; Author: zk_phi
 ;; URL: http://hins11.yu-yake.com/
 ;; Version: 1.0.0
+;; Package-Requires: ((auto-complete "1.3.1"))
 
 ;;; Commentary:
 
