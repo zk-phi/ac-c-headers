@@ -18,6 +18,7 @@
 
 ;; Author: zk_phi
 ;; URL: http://hins11.yu-yake.com/
+;; Package-Version: 20141231.814
 ;; Version: 1.0.0
 ;; Package-Requires: ((auto-complete "1.3.1"))
 
@@ -69,7 +70,9 @@
                                                 file)
                                                (t
                                                 nil)))
-                                       (directory-files (concat prefix dir) nil))))
+				       (if (file-accessible-directory-p dir) 
+					   (directory-files (concat prefix dir) nil)
+					 nil))))
                               cc-search-directories)))
                 ac-c-headers--files-cache))))
 
