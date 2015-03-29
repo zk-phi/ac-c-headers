@@ -18,7 +18,6 @@
 
 ;; Author: zk_phi
 ;; URL: http://hins11.yu-yake.com/
-;; Package-Version: 20141231.814
 ;; Version: 1.0.0
 ;; Package-Requires: ((auto-complete "1.3.1"))
 
@@ -61,18 +60,17 @@
                       (apply 'append
                              (mapcar
                               (lambda (dir)
-                                (delq nil
-                                      (mapcar
-                                       (lambda (file)
-                                         (cond ((file-directory-p (concat prefix file))
-                                                (concat file "/"))
-                                               ((string-match "\\h$" file)
-                                                file)
-                                               (t
-                                                nil)))
-				       (if (file-accessible-directory-p dir) 
-					   (directory-files (concat prefix dir) nil)
-					 nil))))
+                                (when (file-accessible-directory-p dir)
+                                  (delq nil
+                                        (mapcar
+                                         (lambda (file)
+                                           (cond ((file-directory-p (concat prefix file))
+                                                  (concat file "/"))
+                                                 ((string-match "\\h$" file)
+                                                  file)
+                                                 (t
+                                                  nil)))
+                                         (directory-files (concat prefix dir) nil)))))
                               cc-search-directories)))
                 ac-c-headers--files-cache))))
 
