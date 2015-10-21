@@ -60,21 +60,21 @@
                       (apply 'append
                              (mapcar
                               (lambda (dir)
-				(let ((path (concat (file-name-as-directory dir) prefix)))
-				  (when (file-accessible-directory-p path)
-				    (delq nil
-					  (mapcar
-					   (lambda (file)
-					     (cond ((file-directory-p (concat path file))
-						    (concat file "/"))
-						   ((string-match "\\h$" file)
-						    file)
-						   (t
-						    nil)))
-					   (directory-files path nil))))))
-			      cc-search-directories)))
-		ac-c-headers--files-cache))))
-  
+                                (let ((path (concat (file-name-as-directory dir) prefix)))
+                                  (when (file-accessible-directory-p path)
+                                    (delq nil
+                                          (mapcar
+                                           (lambda (file)
+                                             (cond ((file-directory-p (concat path file))
+                                                    (concat file "/"))
+                                                   ((string-match "\\h$" file)
+                                                    file)
+                                                   (t
+                                                    nil)))
+                                           (directory-files path nil))))))
+                              cc-search-directories)))
+                ac-c-headers--files-cache))))
+
 (defun ac-c-headers--files-list (&optional point)
   "returns possible completions at the point"
   (save-excursion
