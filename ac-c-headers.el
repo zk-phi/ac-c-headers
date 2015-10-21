@@ -45,7 +45,7 @@
 
 ;; + constants
 
-(defconst ac-c-headers-version "0.0.1")
+(defconst ac-c-headers-version "1.0.0")
 
 ;; + filenames
 
