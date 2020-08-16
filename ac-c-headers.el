@@ -79,7 +79,7 @@
   "returns possible completions at the point"
   (save-excursion
     (when point (goto-char point))
-    (when (looking-back "[<\"]\\([^<>\"]*?\\)\\([^<>\"/]*\\)")
+    (when (looking-back "[<\"]\\([^<>\"]*?\\)\\([^<>\"/]*\\)" (point-min))
       (let ((prefix (match-string 1)))
         (unless (assoc prefix ac-c-headers--files-cache)
           (ac-c-headers--files-update prefix))
