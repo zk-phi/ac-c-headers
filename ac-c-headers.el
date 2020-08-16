@@ -18,8 +18,8 @@
 
 ;; Author: zk_phi
 ;; URL: http://zk-phi.gitub.io/
-;; Version: 1.0.1
-;; Package-Requires: ((auto-complete "1.3.1") (emacs "26.1"))
+;; Version: 1.0.0
+;; Package-Requires: ((auto-complete "1.3.1"))
 
 ;;; Commentary:
 
@@ -38,7 +38,6 @@
 ;;; Change Log:
 
 ;; 1.0.0 first released
-;; 1.0.1 prefer mapcan over mapcar for performance (requires emacs 26.1 or later)
 
 ;;; Code:
 
@@ -46,7 +45,7 @@
 
 ;; + constants
 
-(defconst ac-c-headers-version "1.0.1")
+(defconst ac-c-headers-version "1.0.0")
 
 ;; + filenames
 
