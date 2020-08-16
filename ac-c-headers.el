@@ -63,7 +63,7 @@
                                 (let ((path (concat (file-name-as-directory dir) prefix)))
                                   (when (file-accessible-directory-p path)
                                     (delq nil
-                                          (mapcar
+                                          (mapcan
                                            (lambda (file)
                                              (cond ((file-directory-p (concat path file))
                                                     (concat file "/"))
